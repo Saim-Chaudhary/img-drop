@@ -90,7 +90,7 @@ export default function Home() {
       </header>
 
       {/* Hero */}
-      <section className="mx-auto grid max-w-6xl items-center gap-12 px-6 pb-16 pt-8 lg:grid-cols-[1fr_0.9fr] lg:pt-16">
+      <section className="mx-auto grid max-w-6xl items-center gap-16 px-6 pb-16 pt-8 lg:grid-cols-[1fr_0.9fr] lg:gap-24 lg:pt-16">
         <div>
           <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#ead7df] bg-[#fff8fb] px-4 py-2 text-xs font-medium text-[#a36d84]">
             <span className="h-2 w-2 rounded-full bg-[#d796ad]" />
@@ -106,7 +106,8 @@ export default function Home() {
 
           <p className="mt-6 max-w-lg text-base leading-7 text-[#756963] sm:text-lg">
             No accounts. No complicated stuff. Just choose your favorite
-            pictures and send them over. ♡
+            pictures and send them over. The kind of little love Doraemon has
+            for Nobita. ♡
           </p>
 
           {/* Upload box */}
@@ -215,7 +216,7 @@ export default function Home() {
         </div>
 
         {/* Hero illustration */}
-        <div className="relative hidden min-h-[560px] items-center justify-center lg:flex">
+        <div className="illustration-stage relative flex min-h-[480px] items-center justify-center lg:min-h-[560px]">
           {/* Large organic shape */}
           <div className="absolute h-[440px] w-[390px] rotate-[-5deg] rounded-[48%_52%_45%_55%/45%_42%_58%_55%] bg-[#f1dfe5]" />
 
@@ -224,9 +225,10 @@ export default function Home() {
           <div className="absolute right-12 top-27 h-14 w-14 rounded-full bg-[#ead7df]" />
 
           {/* Floating photo card */}
-          <div className="absolute left-12 top-24 z-20 w-40 rotate-[-9deg] rounded-[18px] bg-white p-3 shadow-xl">
-            <div className="flex aspect-[4/5] items-center justify-center rounded-[12px] bg-[#e9dce9] text-5xl">
-              🌸
+          <div className="illustration-float absolute left-2 top-24 z-20 w-40 rotate-[-9deg] rounded-[18px] bg-white p-3 shadow-xl sm:left-8 lg:left-12">
+            <div className="memory-card memory-card--flower flex aspect-[4/5] items-center justify-center rounded-[12px] bg-[#e9dce9]">
+              <span className="memory-sun" />
+              <span className="memory-flower">✿</span>
             </div>
             <div className="mt-3 flex justify-between px-1 text-[10px] text-[#998b85]">
               <span>favorite</span>
@@ -235,7 +237,7 @@ export default function Home() {
           </div>
 
           {/* Main camera */}
-          <div className="relative z-10 flex h-72 w-80 rotate-[3deg] items-center justify-center rounded-[42px] border-[3px] border-[#403832] bg-[#f9f4ef] shadow-2xl">
+          <div className="illustration-camera relative z-10 flex h-72 w-80 rotate-[3deg] items-center justify-center rounded-[42px] border-[3px] border-[#403832] bg-[#f9f4ef] shadow-2xl">
             <div className="absolute -top-7 left-12 h-10 w-24 rounded-t-[14px] border-[3px] border-b-0 border-[#403832] bg-[#f9f4ef]" />
 
             <div className="flex h-40 w-40 items-center justify-center rounded-full border-[12px] border-[#403832] bg-[#ead7df] shadow-inner">
@@ -246,12 +248,27 @@ export default function Home() {
           </div>
 
           {/* Small image card */}
-          <div className="absolute bottom-28 right-3 z-20 w-36 rotate-[8deg] rounded-[18px] bg-white p-3 shadow-xl">
-            <div className="flex aspect-square items-center justify-center rounded-[12px] bg-[#e5def5] text-4xl">
-              ✨
+          <div className="illustration-float illustration-float--slow absolute bottom-36 right-0 z-20 w-36 rotate-[8deg] rounded-[18px] bg-white p-3 shadow-xl sm:right-3 lg:bottom-28 lg:right-3">
+            <div className="memory-card memory-card--friends flex aspect-square items-center justify-center rounded-[12px] bg-[#e5def5]">
+              <div className="friend friend--blue">
+                <span className="friend-ear friend-ear--left" />
+                <span className="friend-ear friend-ear--right" />
+                <span className="friend-face">
+                  <span className="friend-eye friend-eye--left" />
+                  <span className="friend-eye friend-eye--right" />
+                  <span className="friend-nose" />
+                </span>
+              </div>
+              <div className="friend friend--yellow">
+                <span className="friend-hair" />
+                <span className="friend-face">
+                  <span className="friend-eye friend-eye--left" />
+                  <span className="friend-eye friend-eye--right" />
+                </span>
+              </div>
             </div>
             <div className="mt-2 text-center text-[10px] text-[#998b85]">
-              little memories
+              always on your side
             </div>
           </div>
 
@@ -260,8 +277,43 @@ export default function Home() {
             🌷
           </div>
 
-          <div className="absolute right-14 top-12 text-2xl">✦</div>
-          <div className="absolute bottom-12 right-32 text-xl">♡</div>
+          <div className="illustration-spark absolute right-14 top-12 text-2xl">✦</div>
+          <div className="illustration-heart absolute bottom-12 right-32 text-xl">♡</div>
+
+          <div className="romance-card absolute bottom-28 left-[-10px] z-30 w-32 rotate-[7deg] rounded-[18px] bg-[#fffaf6] p-3 shadow-xl sm:left-8 lg:bottom-36 lg:left-[-18px]">
+            <div className="romance-art relative flex aspect-[4/3] items-end justify-center overflow-hidden rounded-[12px] bg-[#f8dfe1]">
+              <span className="perfume-bottle" />
+              <span className="lipstick" />
+              <span className="romance-spark romance-spark--one">✦</span>
+              <span className="romance-spark romance-spark--two">♡</span>
+            </div>
+            <p className="mt-2 text-center font-serif text-[13px] italic text-[#a36d84]">
+              grown-up kind of love
+            </p>
+          </div>
+
+          <div className="lingerie-card absolute bottom-[-12px] left-2 z-30 w-36 rotate-[-7deg] rounded-[18px] bg-[#fffaf6] p-3 shadow-xl sm:left-20 lg:bottom-[-6px] lg:left-8">
+            <div className="lingerie-art relative flex aspect-square items-center justify-center overflow-hidden rounded-[12px] bg-[#eadce8]">
+              <span className="bra-shape" />
+              <span className="panties-shape" />
+              <span className="lingerie-ribbon">♡</span>
+            </div>
+            <p className="mt-2 text-center font-serif text-[13px] italic text-[#a36d84]">
+              soft things, sweet notes
+            </p>
+          </div>
+
+          <div className="love-note absolute right-[-18px] top-32 z-30 w-36 rotate-[11deg] rounded-[5px] bg-[#fffdf4] px-4 py-3 shadow-lg">
+            <div className="love-note-line" />
+            <p className="mt-2 font-serif text-[14px] italic leading-5 text-[#80666b]">
+              you are my favorite person
+            </p>
+            <span className="absolute -bottom-2 -right-2 text-lg text-[#bd7894]">♥</span>
+          </div>
+
+          <div className="absolute left-1/2 top-8 z-30 -translate-x-1/2 -rotate-3 rounded-full border border-[#e7c5d2] bg-[#fff8fb] px-4 py-2 text-[11px] font-medium text-[#a36d84] shadow-sm">
+            tiny friends, big feelings
+          </div>
 
           <div className="absolute bottom-2 left-1/2 -translate-x-1/2 rounded-full border border-[#decbd3] bg-white/60 px-5 py-2 text-xs text-[#9d8b91] backdrop-blur">
             your photos, safe & sound
@@ -275,7 +327,8 @@ export default function Home() {
           <div>
             <p className="font-serif text-lg">No account needed ♡</p>
             <p className="mt-1 text-xs text-[#988b84]">
-              Just pick your photos and send them. That's it.
+              Just pick your photos and send them. Doraemon and Nobita would
+              approve.
             </p>
           </div>
 

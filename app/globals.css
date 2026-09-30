@@ -22,5 +22,289 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), sans-serif;
+}
+
+@keyframes illustration-float {
+  0%, 100% { transform: translateY(0) rotate(-9deg); }
+  50% { transform: translateY(-9px) rotate(-7deg); }
+}
+
+@keyframes illustration-float-slow {
+  0%, 100% { transform: translateY(0) rotate(8deg); }
+  50% { transform: translateY(8px) rotate(10deg); }
+}
+
+@keyframes illustration-camera {
+  0%, 100% { transform: translateY(0) rotate(3deg); }
+  50% { transform: translateY(-5px) rotate(2deg); }
+}
+
+@keyframes illustration-spark {
+  0%, 100% { opacity: 0.55; transform: scale(1) rotate(0); }
+  50% { opacity: 1; transform: scale(1.2) rotate(12deg); }
+}
+
+@keyframes illustration-heart {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-8px) scale(1.12); }
+}
+
+.illustration-float { animation: illustration-float 4.8s ease-in-out infinite; }
+.illustration-float--slow { animation: illustration-float-slow 5.8s ease-in-out infinite; }
+.illustration-camera { animation: illustration-camera 4.2s ease-in-out infinite; }
+.illustration-spark { animation: illustration-spark 2.8s ease-in-out infinite; }
+.illustration-heart { animation: illustration-heart 3.4s ease-in-out infinite; }
+
+.romance-card { animation: illustration-float-slow 5.2s ease-in-out 0.8s infinite; }
+.love-note { animation: illustration-float 5.6s ease-in-out 1.2s infinite; }
+.lingerie-card { animation: illustration-float-slow 6.2s ease-in-out 1.5s infinite; }
+
+@media (max-width: 639px) {
+  .illustration-stage {
+    min-height: 390px;
+    margin-bottom: -90px;
+    transform: scale(0.78);
+    transform-origin: top center;
+  }
+}
+
+.romance-art {
+  background:
+    radial-gradient(circle at 22% 22%, #fff4bd 0 3%, transparent 4%),
+    linear-gradient(150deg, #f8dfe1, #ead4e1);
+}
+
+.perfume-bottle {
+  position: relative;
+  z-index: 1;
+  width: 25px;
+  height: 34px;
+  border: 2px solid #b8798e;
+  border-radius: 6px 6px 8px 8px;
+  background: #f7c2c4aa;
+}
+
+.perfume-bottle::before {
+  position: absolute;
+  left: 6px;
+  top: -8px;
+  width: 9px;
+  height: 8px;
+  border: 2px solid #b8798e;
+  border-bottom: 0;
+  content: "";
+}
+
+.lipstick {
+  z-index: 1;
+  width: 12px;
+  height: 31px;
+  margin-left: 12px;
+  border-radius: 3px 3px 1px 1px;
+  background: #b94f6d;
+  transform: rotate(9deg);
+}
+
+.lipstick::before {
+  display: block;
+  width: 12px;
+  height: 9px;
+  border-radius: 10px 2px 0 0;
+  background: #d36b82;
+  content: "";
+  transform: translateY(-6px) rotate(-16deg);
+}
+
+.romance-spark {
+  position: absolute;
+  color: #bd7894;
+  font-size: 13px;
+}
+
+.romance-spark--one { left: 15px; top: 18px; }
+.romance-spark--two { right: 14px; top: 11px; }
+
+.love-note-line {
+  width: 42px;
+  height: 3px;
+  border-radius: 999px;
+  background: #e6a8b9;
+  transform: rotate(-4deg);
+}
+
+.lingerie-art {
+  background:
+    radial-gradient(circle at 76% 18%, #fff4bd 0 3%, transparent 4%),
+    linear-gradient(145deg, #f7e8f0, #dfd4ea);
+}
+
+.bra-shape {
+  position: absolute;
+  top: 29px;
+  left: 27px;
+  width: 68px;
+  height: 34px;
+  border-bottom: 3px solid #bd7894;
+}
+
+.bra-shape::before,
+.bra-shape::after {
+  position: absolute;
+  top: 7px;
+  width: 29px;
+  height: 23px;
+  border: 3px solid #bd7894;
+  border-radius: 50% 50% 45% 45%;
+  background: #f3cbd9;
+  content: "";
+}
+
+.bra-shape::before { left: 1px; }
+.bra-shape::after { right: 1px; }
+
+.panties-shape {
+  position: absolute;
+  bottom: 22px;
+  left: 47px;
+  width: 42px;
+  height: 32px;
+  border: 3px solid #bd7894;
+  border-top: 0;
+  border-radius: 0 0 20px 20px;
+  background: #f3cbd9;
+  clip-path: polygon(0 0, 100% 0, 76% 100%, 24% 100%);
+}
+
+.lingerie-ribbon {
+  position: absolute;
+  right: 14px;
+  bottom: 13px;
+  color: #bd7894;
+  font-size: 16px;
+}
+
+.memory-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.memory-card--flower {
+  background:
+    radial-gradient(circle at 75% 18%, #fff5b8 0 7%, transparent 8%),
+    linear-gradient(155deg, #f8eaf0 0 50%, #e8dff0 50% 100%);
+}
+
+.memory-sun {
+  position: absolute;
+  right: 22px;
+  top: 18px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #f6c982;
+  box-shadow: 0 0 0 7px #f9db9d55;
+}
+
+.memory-flower {
+  z-index: 1;
+  color: #bd7894;
+  font-size: 4.75rem;
+  line-height: 1;
+  text-shadow: 14px 15px 0 #d796ad, -18px 12px 0 #e7b4c4;
+}
+
+.memory-card--friends {
+  align-items: flex-end;
+  gap: 3px;
+  padding: 17px 10px 13px;
+  background: linear-gradient(145deg, #eee8f7, #dcecf2);
+}
+
+.friend {
+  position: relative;
+  width: 43px;
+  height: 66px;
+  border-radius: 24px 24px 11px 11px;
+}
+
+.friend--blue {
+  background: #65b8cc;
+}
+
+.friend--yellow {
+  height: 61px;
+  background: #f2ca69;
+}
+
+.friend-face {
+  position: absolute;
+  left: 6px;
+  top: 15px;
+  display: block;
+  width: 31px;
+  height: 27px;
+  border-radius: 50%;
+  background: #fff7ec;
+}
+
+.friend--yellow .friend-face {
+  top: 13px;
+}
+
+.friend-eye {
+  position: absolute;
+  top: 10px;
+  width: 3px;
+  height: 5px;
+  border-radius: 50%;
+  background: #403832;
+}
+
+.friend-eye--left { left: 9px; }
+.friend-eye--right { right: 9px; }
+
+.friend-nose {
+  position: absolute;
+  left: 14px;
+  top: 15px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #d796ad;
+}
+
+.friend-ear {
+  position: absolute;
+  top: -7px;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background: #65b8cc;
+}
+
+.friend-ear--left { left: 1px; }
+.friend-ear--right { right: 1px; }
+
+.friend-hair {
+  position: absolute;
+  left: 8px;
+  top: -5px;
+  width: 28px;
+  height: 13px;
+  border-radius: 50% 50% 40% 40%;
+  background: #403832;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .illustration-float,
+  .illustration-float--slow,
+  .illustration-camera,
+  .illustration-spark,
+  .illustration-heart,
+  .romance-card,
+  .love-note,
+  .lingerie-card {
+    animation: none;
+  }
 }
